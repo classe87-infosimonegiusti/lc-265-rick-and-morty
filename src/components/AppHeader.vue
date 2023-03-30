@@ -12,8 +12,6 @@
 </script>
 
 <style scoped lang="scss">
-
     @use '../styles/partials/appheader' as *;
-
 
 </style>

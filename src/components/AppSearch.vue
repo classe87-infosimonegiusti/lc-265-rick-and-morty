@@ -6,16 +6,14 @@
                 <input type="text" class="form-control" placeholder="Search character" v-model="store.search" >
             </div>
             <div class="col-auto">
-                <button class="btn btn-primary">Search</button>
+                <button @click="$emit('doSearch')" class="btn btn-primary">Search</button>
             </div>
             <div class="col-auto">
-                <button class="btn btn-warning">Reset</button>
+                <button @click="doReset" class="btn btn-warning">Reset</button>
             </div>
         </div>
     </div>
-
 </template>
-
 
 <script>
 
@@ -26,6 +24,12 @@
         data() {
             return {
                 store
+            }
+        },
+        methods: {
+            doReset() {
+                this.store.search = '';
+                this.$emit('doSearch');
             }
         }
     }
